@@ -31,8 +31,7 @@ RUN conda install --yes \
     seaborn \
     graphviz \
     python-graphviz \
-    dask-labextension \
-    && jupyter labextension install @jupyter-widgets/jupyterlab-manager dask-labextension@1.0.1 \
+    && jupyter labextension install @jupyter-widgets/jupyterlab-manager \
     && conda clean -tipsy \
     && jupyter lab clean \
     && jlpm cache clean \
@@ -42,7 +41,7 @@ RUN conda install --yes \
     && find /opt/conda/ -type f,l -name '*.js.map' -delete \
     && find /opt/conda/lib/python*/site-packages/bokeh/server/static -type f,l -name '*.js' -not -name '*.min.js' -delete \
     && rm -rf /opt/conda/pkgs \
-    && /opt/conda/bin/python -m pip install --no-deps cape-python validators==0.18.0 pycryptodome==3.9.8
+    && /opt/conda/bin/python -m pip install --no-deps cape-privacy validators==0.18.0 pycryptodome==3.9.8
 
 USER root
 
