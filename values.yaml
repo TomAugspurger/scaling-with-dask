@@ -1,7 +1,7 @@
 scheduler:
   image:
     repository: gcr.io/dask-demo-182016/dask-demo
-    tag: 1493e5
+    tag: a8db91
   resources:
     limits:
       cpu: 0.9
@@ -9,12 +9,14 @@ scheduler:
     requests:
       cpu: 0.9
       memory: 3G
+  serviceType: LoadBalancer
+
 
 worker:
   image:
     repository: gcr.io/dask-demo-182016/dask-demo
-    tag: 1493e5
-  replicas: 20
+    tag: a8db91
+  replicas: 1
   resources:
     limits:
       cpu: 2
@@ -26,8 +28,9 @@ worker:
 jupyter:
   image:
     repository: gcr.io/dask-demo-182016/dask-demo
-    tag: 1493e5
+    tag: a8db91
   password: 'sha1:aae8550c0a44:9507d45e087d5ee481a5ce9f4f16f37a0867318c'  # 'dask'
+  serviceType: LoadBalancer
   resources:
     limits:
       cpu: 2

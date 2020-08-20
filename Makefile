@@ -20,6 +20,7 @@ cluster:
 	    --enable-autorepair \
 		--enable-autoscaling --min-nodes=0 --max-nodes=50 \
 		--preemptible
+	gcloud container clusters get-credentials $(cluster_name)
 
 helm:
 	helm repo add dask https://helm.dask.org
