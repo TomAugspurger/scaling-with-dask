@@ -14,7 +14,7 @@ RUN conda install --yes \
     python=3.8 \
     dask=2.23.0 \
     pandas=1.1.0 \
-    pyarrow=1.1.0 \
+    pyarrow=1.0.0 \
     dask-ml=1.6.0 \
     dask-kubernetes \
     scikit-learn \
