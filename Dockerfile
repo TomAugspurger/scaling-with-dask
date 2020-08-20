@@ -30,7 +30,7 @@ RUN conda install --yes \
     matplotlib \
     seaborn \
     graphviz \
-    graphviz-python \
+    python-graphviz \
     dask-labextension \
     && jupyter labextension install @jupyter-widgets/jupyterlab-manager dask-labextension@1.0.1 \
     && conda clean -tipsy \
